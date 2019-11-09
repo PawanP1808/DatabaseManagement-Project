@@ -6,11 +6,9 @@ class CreateVehicles < ActiveRecord::Migration[6.0]
       t.string :modelNo
       t.string :type
       t.string :trim
-      t.integer :colorId
       t.integer :capacity
       t.integer :milage
       t.decimal :packagePrice
-      t.integer :branchId
 
       t.timestamps
     end

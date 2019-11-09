@@ -3,7 +3,6 @@ class CreateBranches < ActiveRecord::Migration[6.0]
     create_table :branches do |t|
       t.string :street
       t.string :city
-      t.string :string
       t.string :postalCode
       t.integer :phoneNo
 

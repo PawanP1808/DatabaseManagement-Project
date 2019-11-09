@@ -5,11 +5,11 @@ class CreateCustomers < ActiveRecord::Migration[6.0]
       t.string :lastName
       t.integer :phoneNumber
       t.integer :driversLicense
-      t.datetime :dob
+      t.date :dateOfBirth
       t.string :email
       t.string :street
       t.string :city
-      t.string :postalcode
+      t.string :postalCode
 
       t.timestamps
     end
