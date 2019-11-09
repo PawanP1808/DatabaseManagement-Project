@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dateTo: 2019-11-09
+  dateFrom: 2019-11-09
+  customerId: 1
+  range: 1
+  totalCost: 1
+  employeeAuthId: 1
+  branchId: 1
+  vehicleLicensePlate: MyString
+
+two:
+  dateTo: 2019-11-09
+  dateFrom: 2019-11-09
+  customerId: 1
+  range: 1
+  totalCost: 1
+  employeeAuthId: 1
+  branchId: 1
+  vehicleLicensePlate: MyString
