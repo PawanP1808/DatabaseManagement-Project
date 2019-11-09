@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: carReservation_production
-  username: carReservation
-  password: <%= ENV['CARRESERVATION_DATABASE_PASSWORD'] %>
+  username: admin
+  password:'password'
