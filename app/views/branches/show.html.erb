@@ -1,0 +1,21 @@
+<h1> showing Brnaches</h1>
+<table style="border:1px solid black" >
+  <tr>
+      <th>ID</th>
+    <th>street</th>
+    <th>city</th>
+    <th>postalcode</th>
+    <th>phoneNo</th>
+  </tr>
+<% Branch.all.each do |cust| %>
+
+<tr>
+  <td>  <%= cust.id %></td>
+  <td>  <%= cust.street %></td>
+  <td>  <%= cust.city %></td>
+  <td>  <%= cust.postalCode %></td>
+  <td>  <%= cust.phoneNo %></td>
+</tr>
+<% end %>
+
+</table>

@@ -3,4 +3,9 @@ Rails.application.routes.draw do
 get 'db/home', to:'db#home'
 
 resources :customers
+resources :branches
+resources :colors
+resources :employees
+resources :reservation
+resources :vehicles
 end

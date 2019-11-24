@@ -1,0 +1,47 @@
+<h1> Create new Brach</h1>
+
+<% if @branch.errors.any? %>
+  <ul>
+<% @branch.errors.full_messages.each do |msg|%>
+    <li> <%= msg %> </li>
+<%end%>
+</ul>
+<%end%>
+
+<%= form_for @branch do |f| %>
+
+<p>
+  <%= f.label :street %><br/>
+  <%= f.text_field :street %><br/>
+
+</p>
+
+
+<p>
+  <%= f.label :city %><br/>
+  <%= f.text_field :city %><br/>
+
+</p>
+<p>
+  <%= f.label :postalCode %><br/>
+  <%= f.text_field :postalCode %><br/>
+
+</p>
+
+<p>
+  <%= f.label :phoneNo %><br/>
+  <%= f.number_field :phoneNo %>
+
+</p>
+
+
+
+<p>
+  <%= f.submit "Add"%>
+
+</p>
+
+
+
+
+<% end %>

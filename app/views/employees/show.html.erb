@@ -1,0 +1,25 @@
+<h1> showing Employee</h1>
+<table style="border:1px solid black" >
+  <tr>
+      <th>BranchID</th>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>ssn</th>
+    <th>dateOfBirth</th>
+    <th>sex</th>
+    <th>salary</th>
+  </tr>
+<% Employee.all.each do |cust| %>
+
+<tr>
+  <td>  <%= cust.branch_id %></td>
+  <td>  <%= cust.firstName %></td>
+  <td>  <%= cust.lastName %></td>
+  <td>  <%= cust.ssn %></td>
+  <td>  <%= cust.dateOfBirth %></td>
+  <td>  <%= cust.sex %></td>
+  <td>  <%= cust.salary %></td>
+</tr>
+<% end %>
+
+</table>

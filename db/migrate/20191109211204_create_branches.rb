@@ -5,7 +5,6 @@ class CreateBranches < ActiveRecord::Migration[6.0]
       t.string :city
       t.string :postalCode
       t.integer :phoneNo
-
       t.timestamps
     end
   end

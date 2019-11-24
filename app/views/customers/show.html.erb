@@ -1,1 +1,32 @@
 <h1> showing customer</h1>
+<table style="border:1px solid black" >
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>phoneNumber</th>
+    <th>drivers License</th>
+    <th>dob</th>
+    <th>email</th>
+    <th>street</th>
+    <th>city</th>
+    <th>postalcode</th>
+  </tr>
+<% Customer.all.each do |cust| %>
+
+
+
+
+<tr>
+  <td>  <%= cust.firstName %></td>
+  <td>  <%= cust.lastName %></td>
+  <td>  <%= cust.phoneNumber %></td>
+  <td>  <%= cust.driversLicense %></td>
+  <td>  <%= cust.dob %></td>
+  <td>  <%= cust.email %></td>
+  <td>  <%= cust.street %></td>
+  <td>  <%= cust.city %></td>
+  <td>  <%= cust.postalcode %></td>
+</tr>
+<% end %>
+
+</table>
