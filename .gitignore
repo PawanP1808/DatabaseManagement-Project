@@ -62,6 +62,8 @@ node_modules/
 yarn-debug.log*
 .yarn-integrity
 
+node_modules/
+
 # Ignore uploaded files in development
 /storage/*
 !/storage/.keep
