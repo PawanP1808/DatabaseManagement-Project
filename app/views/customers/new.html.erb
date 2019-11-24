@@ -1,0 +1,68 @@
+<h1> Create new Customer</h1>
+
+<% if @customer.errors.any? %>
+  <ul>
+<% @customer.errors.full_messages.each do |msg|%>
+    <li> <%= msg %> </li>
+<%end%>
+</ul>
+<%end%>
+
+<%= form_for @customer do |f| %>
+<p>
+  <%= f.label :firstName %><br/>
+  <%= f.text_field :firstName %><br/>
+
+</p>
+
+
+<p>
+  <%= f.label :lastName %><br/>
+  <%= f.text_field :lastName %><br/>
+
+</p>
+
+<p>
+  <%= f.label :phoneNumber %><br/>
+  <%= f.number_field :phoneNumber %>
+
+</p>
+<p>
+  <%= f.label :driversLicense %><br/>
+  <%= f.number_field :driversLicense %>
+
+</p>
+<p>
+  <%= f.label :dob %><br/>
+  <%= f.date_field :dob, :value => Time.now.strftime('%Y-%m-%d') %>
+
+</p>
+<p>
+  <%= f.label :email %><br/>
+  <%= f.text_field :email %><br/>
+
+</p>
+<p>
+  <%= f.label :street %><br/>
+  <%= f.text_field :street %><br/>
+
+</p>
+<p>
+  <%= f.label :city %><br/>
+  <%= f.text_field :city %><br/>
+
+</p>
+<p>
+  <%= f.label :postalcode %><br/>
+  <%= f.text_field :postalcode, :value=>'' %><br/>
+</p>
+
+<p>
+  <%= f.submit "Add"%>
+
+</p>
+
+
+
+
+<% end %>

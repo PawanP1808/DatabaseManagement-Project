@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2019_11_09_232714) do
   create_table "branches", force: :cascade do |t|
     t.string "street"
     t.string "city"
+    t.string "string"
     t.string "postalCode"
     t.integer "phoneNo"
     t.datetime "created_at", precision: 6, null: false
@@ -35,16 +36,17 @@ ActiveRecord::Schema.define(version: 2019_11_09_232714) do
     t.string "lastName"
     t.integer "phoneNumber"
     t.integer "driversLicense"
-    t.date "dateOfBirth"
+    t.datetime "dob"
     t.string "email"
     t.string "street"
     t.string "city"
-    t.string "postalCode"
+    t.string "postalcode"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "employees", force: :cascade do |t|
+    t.integer "branchId"
     t.string "firstName"
     t.string "lastName"
     t.integer "ssn"
@@ -60,8 +62,12 @@ ActiveRecord::Schema.define(version: 2019_11_09_232714) do
   create_table "reservations", force: :cascade do |t|
     t.date "dateTo"
     t.date "dateFrom"
+    t.integer "customerId"
     t.integer "range"
     t.integer "totalCost"
+    t.integer "employeeAuthId"
+    t.integer "branchId"
+    t.string "vehicleLicensePlate"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "employee_id", null: false
@@ -80,9 +86,11 @@ ActiveRecord::Schema.define(version: 2019_11_09_232714) do
     t.string "modelNo"
     t.string "type"
     t.string "trim"
+    t.integer "colorId"
     t.integer "capacity"
     t.integer "milage"
     t.decimal "packagePrice"
+    t.integer "branchId"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "branch_id", null: false
