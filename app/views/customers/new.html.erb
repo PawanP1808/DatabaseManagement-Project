@@ -1,13 +1,17 @@
-<h1> Create new Customer</h1>
+<h1> Add new Customer</h1>
 
 <% if @customer.errors.any? %>
   <ul>
+
 <% @customer.errors.full_messages.each do |msg|%>
-    <li> <%= msg %> </li>
+<div class="alert alert-danger" role="alert">
+      <li> <%= msg %> </li>
+</div>
+
 <%end%>
 </ul>
 <%end%>
-
+<div class="row h-100 justify-content-center align-items-center">
 <%= form_for @customer do |f| %>
 <p>
   <%= f.label :firstName %><br/>
@@ -56,11 +60,14 @@
   <%= f.label :postalCode %><br/>
   <%= f.text_field :postalCode, :value=>'' %><br/>
 </p>
-
+<div class="row h-100 justify-content-center align-items-center">
 <p>
-  <%= f.submit "Add"%>
+  <%= f.submit "Add", :class=>"btn btn-primary"%>
 
 </p>
+
+</div>
+</div>
 
 
 

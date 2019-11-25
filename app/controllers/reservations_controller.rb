@@ -9,7 +9,7 @@ class ReservationsController <ApplicationController
     @reservation = Reservation.new(customer_params)
     # @Reservation.save
     if @reservation.save
-      flash[:notice] = "Customer Color"
+      flash[:notice] = "Reservation Created"
       redirect_to reservation_path(@reservation)
     else
       render 'new'

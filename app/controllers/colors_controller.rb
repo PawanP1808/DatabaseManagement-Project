@@ -9,7 +9,7 @@ class ColorsController <ApplicationController
     @color = Color.new(customer_params)
     # @color.save
     if @color.save
-      flash[:notice] = "Customer Color"
+      flash[:notice] = "New color added"
       redirect_to color_path(@color)
     else
       render 'new'

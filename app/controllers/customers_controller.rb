@@ -10,7 +10,7 @@ class CustomersController <ApplicationController
     @customer = Customer.new(customer_params)
     @customer.save
     if @customer.save
-      flash[:notice] = "Customer Created"
+      flash[:notice] = "New customer added"
       redirect_to customer_path(@customer)
     else
       render 'new'

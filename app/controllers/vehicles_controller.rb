@@ -9,7 +9,7 @@ class VehiclesController <ApplicationController
     @vehicle = Vehicle.new(customer_params)
     # @vehicle.save
     if @vehicle.save
-      flash[:notice] = "Customer Color"
+      flash[:notice] = "Vahicle added"
       redirect_to vehicle_path(@vehicle)
     else
       render 'new'

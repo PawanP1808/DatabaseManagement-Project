@@ -1,6 +1,7 @@
-<h1> showing customer</h1>
-<table style="border:1px solid black" >
+<h1> Showing all Customers</h1>
+<table class="table table-dark">
   <tr>
+      <th>ID</th>
     <th>Firstname</th>
     <th>Lastname</th>
     <th>phoneNumber</th>
@@ -12,11 +13,8 @@
     <th>postalcode</th>
   </tr>
 <% Customer.all.each do |cust| %>
-
-
-
-
 <tr>
+    <td>  <%= cust.id %></td>
   <td>  <%= cust.firstName %></td>
   <td>  <%= cust.lastName %></td>
   <td>  <%= cust.phoneNumber %></td>

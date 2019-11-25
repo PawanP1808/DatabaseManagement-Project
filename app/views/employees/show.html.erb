@@ -1,6 +1,7 @@
 <h1> showing Employee</h1>
-<table style="border:1px solid black" >
+<table class="table table-dark">
   <tr>
+    <th>ID</th>
       <th>BranchID</th>
     <th>Firstname</th>
     <th>Lastname</th>
@@ -12,6 +13,7 @@
 <% Employee.all.each do |cust| %>
 
 <tr>
+  <td>  <%= cust.id %></td>
   <td>  <%= cust.branch_id %></td>
   <td>  <%= cust.firstName %></td>
   <td>  <%= cust.lastName %></td>

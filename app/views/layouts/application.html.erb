@@ -7,16 +7,84 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <nav class="navbar navbar-dark bg-dark">
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+
+          <p>
+            <%= link_to 'Show Reservations', 'reservations/1',:class=>"badge badge-primary"%>
+          </p>
+          <p>
+            <%= link_to 'Show Vehicles', 'vehicles/1',:class=>"badge badge-primary"%>
+          </p>
+
+          <p>
+            <%= link_to 'Show Employees', 'employees/1',:class=>"badge badge-primary"%>
+          </p>
+
+          <p>
+            <%= link_to 'Show Branches', 'branches/1',:class=>"badge badge-primary"%>
+          </p>
+          <p>
+            <%= link_to 'Show Customers', 'customers/2',:class=>"badge badge-primary"%>
+          </p>
+          <p>
+            <%= link_to 'Show Colors', 'colors/1',:class=>"badge badge-primary"%>
+          </p>
+
+
+          <p>
+            <%= link_to 'New Reservations', 'reservations/new',:class=>"badge badge-success"%>
+          </p>
+          <p>
+            <%= link_to 'New Vehicles', 'vehicles/new',:class=>"badge badge-success"%>
+          </p>
+
+          <p>
+            <%= link_to 'New Employees', 'employees/new',:class=>"badge badge-success"%>
+          </p>
+
+          <p>
+            <%= link_to 'New Branches', 'branches/new',:class=>"badge badge-success"%>
+          </p>
+          <p>
+            <%= link_to 'New Customers', 'customers/new',:class=>"badge badge-success"%>
+          </p>
+          <p>
+            <%= link_to 'New Colors', 'colors/new',:class=>"badge badge-success"%>
+          </p>
+
+
+      </div>
+    </nav>
+
+
   </head>
 
-  <body>
+  <body class="p-3 mb-2 bg-dark text-white">
+
     <%flash.each do |name,msg|%>
     <ul>
+        <div class="alert alert-success" role="alert">
       <li><%= msg %></li>
+      </div>
+
+
+
     </ul>
 
 
     <% end %>
     <%= yield %>
+
   </body>
 </html>

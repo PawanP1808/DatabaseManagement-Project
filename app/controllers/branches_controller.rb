@@ -9,7 +9,7 @@ class BranchesController <ApplicationController
     @branch = Branch.new(customer_params)
     # @Branch.save
     if @branch.save
-      flash[:notice] = "Customer branch"
+      flash[:notice] = "New branch added"
       redirect_to branch_path(@branch)
     else
       render 'new'

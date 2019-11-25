@@ -1,12 +1,15 @@
-<h1> Create new Brach</h1>
+<h1> Create new Branch</h1>
 
 <% if @branch.errors.any? %>
   <ul>
 <% @branch.errors.full_messages.each do |msg|%>
-    <li> <%= msg %> </li>
+<div class="alert alert-danger" role="alert">
+      <li> <%= msg %> </li>
+</div>
 <%end%>
 </ul>
 <%end%>
+<div class="row h-100 justify-content-center align-items-center">
 
 <%= form_for @branch do |f| %>
 
@@ -35,11 +38,14 @@
 </p>
 
 
-
+<div class="row h-100 justify-content-center align-items-center">
 <p>
-  <%= f.submit "Add"%>
+  <%= f.submit "Add", :class=>"btn btn-primary"%>
 
 </p>
+
+</div>
+</div>
 
 
 

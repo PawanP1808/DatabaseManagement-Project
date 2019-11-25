@@ -1,12 +1,15 @@
-<h1> Create new Vehicles</h1>
+<h1> Add a new Vehicle</h1>
 
 <% if @vehicle.errors.any? %>
   <ul>
 <% @vehicle.errors.full_messages.each do |msg|%>
-    <li> <%= msg %> </li>
+<div class="alert alert-danger" role="alert">
+      <li> <%= msg %> </li>
+</div>
 <%end%>
 </ul>
 <%end%>
+<div class="row h-100 justify-content-center align-items-center">
 
 <%= form_for @vehicle do |f| %>
 
@@ -69,12 +72,14 @@
 
 
 
-
+<div class="row h-100 justify-content-center align-items-center">
 <p>
-  <%= f.submit "Add"%>
+  <%= f.submit "Add", :class=>"btn btn-primary"%>
 
 </p>
 
+</div>
+</div>
 
 
 
