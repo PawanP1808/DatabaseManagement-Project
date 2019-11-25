@@ -1,0 +1,32 @@
+<h1> showing Reservation</h1>
+<table style="border:1px solid black" >
+  <tr>
+      <th>ID</th>
+    <th>range</th>
+    <th>totalCost</th>
+    <th>employee_id</th>
+    <th>customer_id</th>
+
+
+    <th>branch_id</th>
+    <th>vehicle_id</th>
+
+  </tr>
+<% Reservation.all.each do |cust| %>
+
+<tr>
+  <td>  <%= cust.id %></td>
+  <td>  <%= cust.range %></td>
+  <td>  <%= cust.totalCost %></td>
+  <td>  <%= cust.employee_id %></td>
+  <td>  <%= cust.customer_id %></td>
+
+  <td>  <%= cust.branch_id %></td>
+  <td>  <%= cust.vehicle_id %></td>
+
+
+</tr>
+<% end %>
+
+
+</table>

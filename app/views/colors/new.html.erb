@@ -1,0 +1,30 @@
+<h1> Create new Brach</h1>
+
+<% if @color.errors.any? %>
+  <ul>
+<% @color.errors.full_messages.each do |msg|%>
+    <li> <%= msg %> </li>
+<%end%>
+</ul>
+<%end%>
+
+<%= form_for @color do |f| %>
+
+
+
+<p>
+  <%= f.label :color %><br/>
+  <%= f.text_field :color %><br/>
+
+</p>
+
+
+<p>
+  <%= f.submit "Add"%>
+
+</p>
+
+
+
+
+<% end %>

@@ -6,6 +6,6 @@ resources :customers
 resources :branches
 resources :colors
 resources :employees
-resources :reservation
+resources :reservations
 resources :vehicles
 end

@@ -1,0 +1,40 @@
+<h1> showing Vehicles</h1>
+<table style="border:1px solid black" >
+  <tr>
+      <th>ID</th>
+    <th>licensePlate</th>
+    <th>brand</th>
+    <th>modelNo</th>
+    <th>type</th>
+
+
+    <th>trim</th>
+    <th>capacity</th>
+    <th>milage</th>
+
+    <th>packagePrice</th>
+    <th>branch_id</th>
+    <th>color_id</th>
+  </tr>
+<% Vehicle.all.each do |cust| %>
+
+<tr>
+  <td>  <%= cust.id %></td>
+  <td>  <%= cust.licensePlate %></td>
+  <td>  <%= cust.brand %></td>
+  <td>  <%= cust.modelNo %></td>
+  <td>  <%= cust.v_type %></td>
+
+  <td>  <%= cust.trim %></td>
+  <td>  <%= cust.capacity %></td>
+  <td>  <%= cust.milage %></td>
+
+
+  <td>  <%= cust.packagePrice %></td>
+  <td>  <%= cust.branch_id %></td>
+  <td>  <%= cust.color_id %></td>
+
+</tr>
+<% end %>
+
+</table>

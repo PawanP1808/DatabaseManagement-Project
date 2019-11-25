@@ -4,7 +4,7 @@ class CreateVehicles < ActiveRecord::Migration[6.0]
       t.string :licensePlate
       t.string :brand
       t.string :modelNo
-      t.string :type
+      t.string :v_type
       t.string :trim
       t.integer :capacity
       t.integer :milage

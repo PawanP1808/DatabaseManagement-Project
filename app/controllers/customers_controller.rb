@@ -6,15 +6,15 @@ class CustomersController <ApplicationController
 
   def create
 
-    # render plain: params[:customer].inspect
+    render plain: params[:customer][:firstName].inspect
     @customer = Customer.new(customer_params)
     # @customer.save
-    if @customer.save
-      flash[:notice] = "Customer Created"
-      redirect_to customer_path(@customer)
-    else
-      render 'new'
-    end
+    # if @customer.save
+    #   flash[:notice] = "Customer Created"
+    #   redirect_to customer_path(@customer)
+    # else
+    #   render 'new'
+    # end
   end
 
   def show
@@ -23,7 +23,7 @@ class CustomersController <ApplicationController
 
   private
   def customer_params
-    params.require(:customer).permit(:firstName,:lastName,:phoneNumber,:driversLicense,:dob,:email,:street,:city,:postalcode)
+    params.require(:customer).permit(:firstName,:lastName,:phoneNumber,:driversLicense,:dateOfBirth,:email,:street,:city,:postalCode)
   end
 
 

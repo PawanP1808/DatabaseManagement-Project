@@ -53,8 +53,7 @@ ActiveRecord::Schema.define(version: 2019_11_09_232714) do
     t.decimal "salary"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "branch_id", null: false
-    t.index ["branch_id"], name: "index_employees_on_branch_id"
+    t.integer "branch_id"
   end
 
   create_table "reservations", force: :cascade do |t|
@@ -64,38 +63,25 @@ ActiveRecord::Schema.define(version: 2019_11_09_232714) do
     t.integer "totalCost"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "employee_id", null: false
-    t.bigint "customer_id", null: false
-    t.bigint "branch_id", null: false
-    t.bigint "vehicle_id", null: false
-    t.index ["branch_id"], name: "index_reservations_on_branch_id"
-    t.index ["customer_id"], name: "index_reservations_on_customer_id"
-    t.index ["employee_id"], name: "index_reservations_on_employee_id"
-    t.index ["vehicle_id"], name: "index_reservations_on_vehicle_id"
+    t.integer "employee_id"
+    t.integer "customer_id"
+    t.integer "branch_id"
+    t.integer "vehicle_id"
   end
 
   create_table "vehicles", force: :cascade do |t|
     t.string "licensePlate"
     t.string "brand"
     t.string "modelNo"
-    t.string "type"
+    t.string "v_type"
     t.string "trim"
     t.integer "capacity"
     t.integer "milage"
     t.decimal "packagePrice"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "branch_id", null: false
-    t.bigint "color_id", null: false
-    t.index ["branch_id"], name: "index_vehicles_on_branch_id"
-    t.index ["color_id"], name: "index_vehicles_on_color_id"
+    t.integer "branch_id"
+    t.integer "color_id"
   end
 
-  add_foreign_key "employees", "branches"
-  add_foreign_key "reservations", "branches"
-  add_foreign_key "reservations", "customers"
-  add_foreign_key "reservations", "employees"
-  add_foreign_key "reservations", "vehicles"
-  add_foreign_key "vehicles", "branches"
-  add_foreign_key "vehicles", "colors"
 end

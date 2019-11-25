@@ -1,0 +1,19 @@
+<h1> showing Colors</h1>
+<table style="border:1px solid black" >
+  <tr>
+      <th>ID</th>
+    <th>street</th>
+    <th>city</th>
+    <th>postalcode</th>
+    <th>phoneNo</th>
+  </tr>
+<% Color.all.each do |cust| %>
+
+<tr>
+  <td>  <%= cust.id %></td>
+  <td>  <%= cust.color %></td>
+
+</tr>
+<% end %>
+
+</table>

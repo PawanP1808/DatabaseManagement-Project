@@ -1,0 +1,81 @@
+<h1> Create new Vehicles</h1>
+
+<% if @vehicle.errors.any? %>
+  <ul>
+<% @vehicle.errors.full_messages.each do |msg|%>
+    <li> <%= msg %> </li>
+<%end%>
+</ul>
+<%end%>
+
+<%= form_for @vehicle do |f| %>
+
+<p>
+  <%= f.label :licensePlate %><br/>
+  <%= f.text_field :licensePlate %><br/>
+
+</p>
+<p>
+  <%= f.label :brand %><br/>
+  <%= f.text_field :brand %><br/>
+
+</p>
+<p>
+  <%= f.label :modelNo %><br/>
+  <%= f.text_field :modelNo %><br/>
+
+</p>
+<p>
+  <%= f.label :v_type %><br/>
+  <%= f.text_field :v_type %><br/>
+
+</p>
+<p>
+  <%= f.label :trim %><br/>
+  <%= f.text_field :trim %><br/>
+
+</p>
+
+
+
+
+<p>
+  <%= f.label :capacity %><br/>
+  <%= f.number_field :capacity %>
+
+</p>
+<p>
+  <%= f.label :milage %><br/>
+  <%= f.number_field :milage %>
+
+</p>
+<p>
+  <%= f.label :packagePrice %><br/>
+  <%= f.number_field :packagePrice %>
+
+</p>
+
+<p>
+  <%= f.label :branch_id %><br/>
+  <%= f.number_field :branch_id %>
+
+</p>
+
+<p>
+  <%= f.label :color_id %><br/>
+  <%= f.number_field :color_id %>
+
+</p>
+
+
+
+
+<p>
+  <%= f.submit "Add"%>
+
+</p>
+
+
+
+
+<% end %>

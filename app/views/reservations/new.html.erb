@@ -1,0 +1,54 @@
+<h1> Create new Reservation</h1>
+
+<% if @reservation.errors.any? %>
+  <ul>
+<% @reservation.errors.full_messages.each do |msg|%>
+    <li> <%= msg %> </li>
+<%end%>
+</ul>
+<%end%>
+
+<%= form_for @reservation do |f| %>
+
+<p>
+  <%= f.label :range %><br/>
+  <%= f.number_field :range %>
+
+</p>
+<p>
+  <%= f.label :totalCost %><br/>
+  <%= f.number_field :totalCost %>
+
+</p>
+<p>
+  <%= f.label :employee_id %><br/>
+  <%= f.number_field :employee_id %>
+
+</p>
+
+<p>
+  <%= f.label :customer_id %><br/>
+  <%= f.number_field :customer_id %>
+
+</p>
+<p>
+  <%= f.label :branch_id %><br/>
+  <%= f.number_field :branch_id %>
+
+</p>
+<p>
+  <%= f.label :vehicle_id %><br/>
+  <%= f.number_field :vehicle_id %>
+
+</p>
+
+
+<p>
+  <%= f.submit "Add"%>
+
+</p>
+
+
+
+
+<% end %>
