@@ -6,15 +6,15 @@ class CustomersController <ApplicationController
 
   def create
 
-    render plain: params[:customer][:firstName].inspect
+    # render plain: params[:customer][:firstName].inspect
     @customer = Customer.new(customer_params)
-    # @customer.save
-    # if @customer.save
-    #   flash[:notice] = "Customer Created"
-    #   redirect_to customer_path(@customer)
-    # else
-    #   render 'new'
-    # end
+    @customer.save
+    if @customer.save
+      flash[:notice] = "Customer Created"
+      redirect_to customer_path(@customer)
+    else
+      render 'new'
+    end
   end
 
   def show

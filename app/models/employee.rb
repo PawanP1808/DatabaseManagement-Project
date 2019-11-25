@@ -1,5 +1,5 @@
 class Employee < ApplicationRecord
-    has_many :reservations
-      belongs_to :branches
-      
+    has_many :reservation
+      belongs_to :branch
+
 end

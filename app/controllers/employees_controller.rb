@@ -6,9 +6,10 @@ class EmployeesController <ApplicationController
 
   def create
 
-    render plain: params[:customer].inspect
-    @employee = Employee.new(customer_params)
-    @employee.branch = Branch.first
+    # render plain: params[:customer].inspect
+    @employee = Employee.create(customer_params)
+
+
     # @employee.save
     if @employee.save
       flash[:notice] = "Employee Created"

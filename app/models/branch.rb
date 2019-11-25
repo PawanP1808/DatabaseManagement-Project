@@ -1,5 +1,5 @@
 class Branch < ApplicationRecord
-    has_many :reservations
-    has_many :vehicles
-    has_many :employees
+    has_many :reservation
+    has_many :vehicle
+    has_many :employee
 end
