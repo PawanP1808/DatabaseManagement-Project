@@ -5,15 +5,25 @@ class CustomersController <ApplicationController
   end
 
   def create
+  response = Excon.get("http://apilayer.net/api/check?access_key=9e691b413c2d409bc6df3f247a3946ba&email="+params[:customer][:email]+"&smtp=1&format=1")
+       return nil if response.status != 200
+  @email = JSON.parse(response.body)
+   # render plain: @email["format_valid"].inspect
 
-    # render plain: params[:customer][:firstName].inspect
     @customer = Customer.new(customer_params)
-    @customer.save
-    if @customer.save
-      flash[:notice] = "New customer added"
-      redirect_to customer_path(@customer)
+    if @email["format_valid"]
+      @customer.email = params[:customer][:email]
+      @customer.save
+      if @customer.save
+        flash[:notice] = "New customer added"
+        redirect_to customer_path(@customer)
+      else
+        render 'new'
+      end
+
     else
-      render 'new'
+        flash[:notice] = "Email invalid"
+        redirect_to "/"
     end
   end
 
@@ -29,7 +39,7 @@ class CustomersController <ApplicationController
 
   private
   def customer_params
-    params.require(:customer).permit(:first_name,:last_name,:phone_number,:drivers_license,:date_of_birth,:email,:street,:city,:postal_code)
+    params.require(:customer).permit(:first_name,:last_name,:phone_number,:drivers_license,:date_of_birth,:street,:city,:postal_code)
   end
 
 

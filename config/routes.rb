@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'db#home'
 get 'db/home', to:'db#home'
 
-get 'customers/1', to:'customers#show'
+
 get 'queryone/', to:'queryone#show'
 get 'querytwo/', to:'querytwo#show'
 get 'querythree/', to:'querythree#show'
