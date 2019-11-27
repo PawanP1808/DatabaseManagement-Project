@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<h1>Showing Query 3</h1>
+<h2>A correlated nested query</h2>
+<h3> List the employees of every branch which have the highest salary</h3>
+
+<body>
+<samp>
+SELECT first_name, last_name, salary, branch_id
+FROM employees as e
+WHERE salary = (SELECT MAX(salary) 
+                FROM employees
+                WHERE e.branch_id=branch_id)
+</samp>
+<br><br>
+<!-- Query code for database and execution-->
+<% @querythree = "SELECT first_name, last_name, salary, branch_id
+                FROM employees as e
+                WHERE salary = (SELECT MAX(salary) 
+                                FROM employees
+                                WHERE e.branch_id=branch_id)"%>
+<% @result = ActiveRecord::Base.connection.execute(@querythree)%>
+
+<!--Display the query output-->
+
+<table class="table table-dark">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Salary ($)</th>
+        <th>Branch ID</th>
+    </tr>
+    <%@result.each do |cust| %>
+    <tr>
+        <td><%= cust["first_name"]%></td>
+        <td><%= cust["last_name"]%></td>
+        <td><%= cust["salary"]%></td>
+        <td><%= cust["branch_id"]%></td>
+    </tr>
+
+<%end%>
+</table>
+
+</body>
+</html>

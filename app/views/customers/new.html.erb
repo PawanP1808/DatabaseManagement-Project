@@ -14,31 +14,31 @@
 <div class="row h-100 justify-content-center align-items-center">
 <%= form_for @customer do |f| %>
 <p>
-  <%= f.label :firstName %><br/>
-  <%= f.text_field :firstName %><br/>
+  <%= f.label :first_name %><br/>
+  <%= f.text_field :first_name %><br/>
 
 </p>
 
 
 <p>
-  <%= f.label :lastName %><br/>
-  <%= f.text_field :lastName %><br/>
+  <%= f.label :last_name %><br/>
+  <%= f.text_field :last_name %><br/>
 
 </p>
 
 <p>
-  <%= f.label :phoneNumber %><br/>
-  <%= f.number_field :phoneNumber %>
+  <%= f.label :phone_number %><br/>
+  <%= f.number_field :phone_number %>
 
 </p>
 <p>
-  <%= f.label :driversLicense %><br/>
-  <%= f.number_field :driversLicense %>
+  <%= f.label :drivers_license %><br/>
+  <%= f.number_field :drivers_license %>
 
 </p>
 <p>
-  <%= f.label :dateOfBirth %><br/>
-  <%= f.date_field :dateOfBirth, :value => Time.now.strftime('%Y-%m-%d') %>
+  <%= f.label :date_of_birth %><br/>
+  <%= f.date_field :date_of_birth, :value => Time.now.strftime('%Y-%m-%d') %>
 
 </p>
 <p>
@@ -57,8 +57,8 @@
 
 </p>
 <p>
-  <%= f.label :postalCode %><br/>
-  <%= f.text_field :postalCode, :value=>'' %><br/>
+  <%= f.label :postal_code %><br/>
+  <%= f.text_field :postal_code, :value=>'' %><br/>
 </p>
 <div class="row h-100 justify-content-center align-items-center">
 <p>

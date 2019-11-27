@@ -1,0 +1,2 @@
+module QuerysixHelper
+end

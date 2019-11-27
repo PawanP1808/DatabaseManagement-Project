@@ -22,7 +22,7 @@ class BranchesController <ApplicationController
 
   private
   def customer_params
-    params.require(:branch).permit(:street,:city,:postalCode,:phoneNo)
+    params.require(:branch).permit(:street,:city,:postal_code,:phone_no)
   end
 
 

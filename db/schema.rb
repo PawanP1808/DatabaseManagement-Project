@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 2019_11_09_232714) do
   create_table "branches", force: :cascade do |t|
     t.string "street"
     t.string "city"
-    t.string "postalCode"
-    t.integer "phoneNo"
+    t.string "postal_code"
+    t.integer "phone_no"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -31,24 +31,24 @@ ActiveRecord::Schema.define(version: 2019_11_09_232714) do
   end
 
   create_table "customers", force: :cascade do |t|
-    t.string "firstName"
-    t.string "lastName"
-    t.integer "phoneNumber"
-    t.integer "driversLicense"
-    t.date "dateOfBirth"
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "phone_number"
+    t.integer "drivers_license"
+    t.date "date_of_birth"
     t.string "email"
     t.string "street"
     t.string "city"
-    t.string "postalCode"
+    t.string "postal_code"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "employees", force: :cascade do |t|
-    t.string "firstName"
-    t.string "lastName"
+    t.string "first_name"
+    t.string "last_name"
     t.integer "ssn"
-    t.date "dateOfBirth"
+    t.date "date_of_birth"
     t.string "sex"
     t.decimal "salary"
     t.datetime "created_at", precision: 6, null: false
@@ -57,10 +57,10 @@ ActiveRecord::Schema.define(version: 2019_11_09_232714) do
   end
 
   create_table "reservations", force: :cascade do |t|
-    t.date "dateTo"
-    t.date "dateFrom"
+    t.date "date_to"
+    t.date "date_from"
     t.integer "range"
-    t.integer "totalCost"
+    t.integer "total_cost"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "employee_id"
@@ -70,14 +70,14 @@ ActiveRecord::Schema.define(version: 2019_11_09_232714) do
   end
 
   create_table "vehicles", force: :cascade do |t|
-    t.string "licensePlate"
+    t.string "license_plate"
     t.string "brand"
-    t.string "modelNo"
+    t.string "model_no"
     t.string "v_type"
     t.string "trim"
     t.integer "capacity"
     t.integer "milage"
-    t.decimal "packagePrice"
+    t.decimal "package_price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "branch_id"

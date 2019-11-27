@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<h1>Showing Query 1</h1>
+<h2>Compute a Join of 3 Tables</h2>
+<h2>Reservation, Customers, Vehicles</h2>
+<h3>Merge customer first and last name with car model and reservation number</h3>
+
+
+<body>
+<samp>
+SELECT reservations.id, customers.first_name, customers.last_name, reservations.vehicle_id
+FROM reservations
+JOIN customers ON reservations.customer_id=customers.id
+JOIN vehicles ON reservations.vehicle_id=vehicles.id
+</samp>
+<br><br>
+<!-- Query code for database and execution-->
+<% @queryone = "SELECT reservations.id, customers.first_name, customers.last_name, reservations.vehicle_id
+                FROM reservations
+                JOIN customers ON reservations.customer_id=customers.id
+                JOIN vehicles ON reservations.vehicle_id=vehicles.id"%>
+<% @result = ActiveRecord::Base.connection.execute(@queryone)%>
+
+<!--Display the query output-->
+
+<table class="table table-dark">
+    <tr>
+        <th>Reservation ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Vehicle ID</th>
+    </tr>
+    <%@result.each do |cust| %>
+    <tr>
+    <td><%=cust["id"]%></td>
+    <td><%=cust["first_name"]%></td>
+    <td><%=cust["last_name"]%></td>
+    <td><%=cust["vehicle_id"]%></td>
+    </tr>
+
+<%end%>
+</table>
+
+</body>
+</html>

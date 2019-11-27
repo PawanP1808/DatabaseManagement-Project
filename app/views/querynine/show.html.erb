@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<h1>Showing Query 9</h1>
+<h2>Custom Queries</h2>
+<h3>List all the senior employees (over the age of 65)</h3>
+
+<body>
+<samp>
+SELECT first_name, last_name, date_of_birth
+FROM employees
+WHERE (date_part('year', CURRENT_DATE) - date_part('year', date_of_birth))>65
+</samp>
+<br><br>
+<!-- Query code for database and execution-->
+<%@querynine = "SELECT first_name, last_name, date_of_birth
+                FROM employees
+                WHERE (date_part('year', CURRENT_DATE) - date_part('year', date_of_birth))>65"%>
+<% @result = ActiveRecord::Base.connection.execute(@querynine)%>
+
+<!--Display the query output-->
+
+<table class="table table-dark">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Date of Birth</th>
+    </tr>
+    <%@result.each do |cust| %>
+    <tr>
+        <td><%= cust["first_name"]%></td>
+        <td><%= cust["last_name"]%></td>
+        <td><%= cust["date_of_birth"]%></td>
+    </tr>
+
+<%end%>
+</table>
+</body>
+</html>

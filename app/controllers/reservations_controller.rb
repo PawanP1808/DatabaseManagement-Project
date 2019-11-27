@@ -22,7 +22,7 @@ class ReservationsController <ApplicationController
 
   private
   def customer_params
-    params.require(:reservation).permit(:range,:totalCost,:employee_id,:customer_id,:branch_id,:vehicle_id)
+    params.require(:reservation).permit(:range,:total_cost,:employee_id,:customer_id,:branch_id,:vehicle_id)
   end
 
 

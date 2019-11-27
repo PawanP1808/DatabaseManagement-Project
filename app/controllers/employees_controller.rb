@@ -25,7 +25,7 @@ class EmployeesController <ApplicationController
 
   private
   def customer_params
-    params.require(:employee).permit(:branch_id,:firstName,:lastName,:ssn,:dateOfBirth,:sex,:salary)
+    params.require(:employee).permit(:branch_id,:first_name,:last_name,:ssn,:date_of_birth,:sex,:salary)
   end
 
 

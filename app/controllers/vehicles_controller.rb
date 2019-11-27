@@ -22,7 +22,7 @@ class VehiclesController <ApplicationController
 
   private
   def customer_params
-    params.require(:vehicle).permit(:licensePlate, :brand, :modelNo,:v_type,:trim,:capacity, :milage,:packagePrice,:branch_id,:color_id)
+    params.require(:vehicle).permit(:license_plate, :brand, :model_no,:v_type,:trim,:capacity, :milage,:package_price,:branch_id,:color_id)
   end
 
 

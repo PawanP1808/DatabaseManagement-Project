@@ -1,0 +1,2 @@
+module QueryoneHelper
+end
