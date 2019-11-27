@@ -17,7 +17,12 @@ class ColorsController <ApplicationController
   end
 
   def show
-    @color = Color.find(params[:id])
+    @color = Color.first.nil?
+    if @color
+      flash[:notice] = "Color Table Empty"
+     else
+       @color = Color.find(params[:id])
+     end
   end
 
   private

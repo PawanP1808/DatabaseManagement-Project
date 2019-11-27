@@ -11,7 +11,145 @@
   <title>Hello, DBMS!</title>
 </head>
 <body>
+  <h2>Welcome!</h2>
+      <table class="table table-dark">
+  <tr>
+    <th>View Tables</th>
+    <th>Add to Tables</th>
+      <th>Query DB</th>
+    </tr>
+  <tr>
+    <td>
+      <%= link_to 'Show Reservations', '/reservations/1',:class=>"badge badge-primary"%>
+    </td>
+    <td>
+      <%= link_to 'New Reservations', '/reservations/new',:class=>"badge badge-success"%>
+    </td>
+    <td>
+      <%= link_to 'Compute a Join of 3 Tables', '/queryone/',:class=>"badge badge-primary"%>
+    </td>
 
+  </tr>
+
+  <tr>
+    <td>
+      <%= link_to 'Show Vehicles', '/vehicles/1',:class=>"badge badge-primary"%>
+    </td>
+    <td>
+      <%= link_to 'New Vehicles', '/vehicles/new',:class=>"badge badge-success"%>
+    </td>
+    <td>
+      <%= link_to 'Uses nested queries with the ANY or ALL operator and uses a GROUP BY clause', '/querytwo/',:class=>"badge badge-primary"%>
+    </td>
+  </tr>
+
+<tr>
+  <td>
+    <%= link_to 'Show Employees', '/employees/1',:class=>"badge badge-primary"%>
+  </td>
+
+
+        <td>
+          <%= link_to 'New Employees', '/employees/new',:class=>"badge badge-success"%>
+        </td>
+        <td>
+          <%= link_to 'A correlated nested query', '/querythree/',:class=>"badge badge-primary"%>
+        </td>
+</tr>
+
+<tr>
+  <td>
+    <%= link_to 'Show Branches', '/branches/1',:class=>"badge badge-primary"%>
+  </td>
+
+  <td>
+    <%= link_to 'New Branches', '/branches/new',:class=>"badge badge-success"%>
+  </td>
+  <td>
+    <%= link_to 'Uses a FULL JOIN', '/queryfour/',:class=>"badge badge-primary"%>
+  </td>
+
+</tr>
+<tr>
+  <td>
+    <%= link_to 'Show Customers', '/customers/2',:class=>"badge badge-primary"%>
+  </td>
+  <td>
+    <%= link_to 'New Customers', '/customers/new',:class=>"badge badge-success"%>
+  </td>
+  <td>
+    <%= link_to 'Uses nested queries with any of the set operations UNION, EXCEPT, or INTERSECT', '/queryfive/',:class=>"badge badge-primary"%>
+  </td>
+</tr>
+
+
+<tr>
+  <td>
+    <%= link_to 'Show Colors', '/colors/1',:class=>"badge badge-primary"%>
+  </td>
+  <td>
+    <%= link_to 'New Colors', '/colors/new',:class=>"badge badge-success"%>
+  </td>
+  <td>
+    <%= link_to 'Find which employee had the most number of reservations in a given year', '/querysix/',:class=>"badge badge-primary"%>
+  </td>
+
+</tr>
+
+
+
+
+<tr>
+  <td></td>
+  <td></td>
+  <td>
+   <%= link_to 'Give a list of branches that have a vehicle in stock for rent, grouped by city
+', '/queryseven/',:class=>"badge badge-primary"%>
+ </td>
+</tr>
+
+<tr>
+  <td></td>
+  <td></td>
+  <td>
+   <%= link_to 'List the birthdays of all employees in a branch ordered by month', '/queryeight/',:class=>"badge badge-primary"%>
+ </td>
+</tr>
+
+<tr>
+  <td></td>
+  <td></td>
+  <td>
+   <%= link_to 'List all the senior employees (over the age of 65)', '/querynine/',:class=>"badge badge-primary"%>
+  </td>
+</tr>
+
+<tr>
+  <td></td>
+  <td></td>
+  <td>
+   <%= link_to 'List the reservations that have been made for a specific customer for the past month', '/queryten/',:class=>"badge badge-primary"%>
+ </td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </table>
 
 </body>
 </html>

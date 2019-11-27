@@ -17,7 +17,14 @@ class BranchesController <ApplicationController
   end
 
   def show
-    @branch = Branch.find(params[:id])
+
+    @branch = Branch.first.nil?
+    if @branch
+      flash[:notice] = "Branches Table Empty"
+
+     else
+           @branch = Branch.find(params[:id])
+     end
   end
 
   private

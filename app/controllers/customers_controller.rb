@@ -18,7 +18,13 @@ class CustomersController <ApplicationController
   end
 
   def show
-    @customer = Customer.find(params[:id])
+
+    @customer = Customer.first.nil?
+    if @customer
+      flash[:notice] = "Customers Table Empty"
+     else
+           @customer = Customer.all
+     end
   end
 
   private

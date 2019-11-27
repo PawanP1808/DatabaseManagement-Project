@@ -17,7 +17,12 @@ class VehiclesController <ApplicationController
   end
 
   def show
-    @vehicle = Vehicle.find(params[:id])
+@vehicle = Vehicle.first.nil?
+    if @vehicle
+      flash[:notice] = "Vehicle Table Empty"
+     else
+            @vehicle = Vehicle.find(params[:id])
+     end
   end
 
   private

@@ -20,7 +20,13 @@ class EmployeesController <ApplicationController
   end
 
   def show
-    @employee = Employee.find(params[:id])
+    @employee = Employee.first.nil?
+    if @employee
+      flash[:notice] = "Employee Empty"
+
+     else
+       @employee = Employee.find(params[:id])
+     end
   end
 
   private

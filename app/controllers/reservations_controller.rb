@@ -17,7 +17,12 @@ class ReservationsController <ApplicationController
   end
 
   def show
-    @reservation = Reservation.find(params[:id])
+@reservation = Reservation.first.nil?
+    if @reservation
+      flash[:notice] = "Reservation Table Empty"
+     else
+            @reservation = Reservation.find(params[:id])
+     end
   end
 
   private
