@@ -1,5 +1,5 @@
-# Car Reservation Database
-This project is implementing a car reservation database using Ruby on Rails and PostgreSQL
+# Vehicle-Reservation Web Application
+This project is the implementation of a vehice-reservation web-application using Ruby-on-Rails web framework and PostgreSQL DBMS.
 
 ## Installation
 The following instructions are for running the project on Windows.
