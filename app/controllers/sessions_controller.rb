@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   end
 
   def show
-    
+
   end
 
   def create
@@ -14,7 +14,8 @@ class SessionsController < ApplicationController
       redirect_to root_url, notice: "Logged in!"
     else
       flash.now[:error] = 'Invalid email/password combination'
-       render 'new'
+
+       redirect_to '/sessions/new',notice: "Invalid email/password combination"
     end
 
   end
