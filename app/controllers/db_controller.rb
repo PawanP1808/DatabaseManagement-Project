@@ -5,6 +5,7 @@ class DbController<ApplicationController
    return nil if response.status != 200
    @weather = JSON.parse(response.body)
   end
+  
 
 
 

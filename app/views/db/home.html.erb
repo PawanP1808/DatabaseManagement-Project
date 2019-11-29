@@ -11,10 +11,16 @@
   <title>Hello, DBMS!</title>
 </head>
 <body>
+
+
   <h2>Welcome!</h2>
+
   <h3>Todays weather is <%=  (@weather["main"]["temp"]-273).round(2)  %>  &#8451;
    Powered by OpenWeatherMap API
   </h3>
+
+  <%= column_chart Reservation.group_by_day_of_week(:created_at, format: "%a").count %>
+  <%= pie_chart Customer.group(:first_name).count %>
       <table class="table table-dark">
   <tr>
     <th>View Tables</th>

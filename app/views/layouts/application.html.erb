@@ -16,87 +16,28 @@
       <nav class="navbar navbar-dark bg-dark">
           <a class="navbar-brand" href="/"><h1>Project 25- Car reservation</h1></a>
 
+
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <ul class="nav navbar-nav navbar-right">
+     <li>  <% if current_user %>   Logged in as <%= current_user.email %>.   <%= link_to 'Log Out', logout_path %> <% else %>  <% end %></li>
+
+   </ul>
       </button>
+
       <div class="collapse navbar-collapse" id="navbarText">
 
-          <p>
-            <%= link_to 'Show Reservations', '/reservations/1',:class=>"badge badge-primary"%>
-          </p>
-          <p>
-            <%= link_to 'Show Vehicles', '/vehicles/1',:class=>"badge badge-primary"%>
-          </p>
-
-          <p>
-            <%= link_to 'Show Employees', '/employees/1',:class=>"badge badge-primary"%>
-          </p>
-
-          <p>
-            <%= link_to 'Show Branches', '/branches/1',:class=>"badge badge-primary"%>
-          </p>
-          <p>
-            <%= link_to 'Show Customers', '/customers/2',:class=>"badge badge-primary"%>
-          </p>
-          <p>
-            <%= link_to 'Show Colors', '/colors/1',:class=>"badge badge-primary"%>
-          </p>
-          <p>
-            <%= link_to 'Query One', '/queryone/',:class=>"badge badge-primary"%>
-          </p>
-          <p>
-            <%= link_to 'Query Two', '/querytwo/',:class=>"badge badge-primary"%>
-          </p>
-          <p>
-            <%= link_to 'Query Three', '/querythree/',:class=>"badge badge-primary"%>
-          </p>
-          <p>
-            <%= link_to 'Query Four', '/queryfour/',:class=>"badge badge-primary"%>
-          </p>
-          <p>
-            <%= link_to 'Query Five', '/queryfive/',:class=>"badge badge-primary"%>
-          </p>
-          <p>
-            <%= link_to 'Query Six', '/querysix/',:class=>"badge badge-primary"%>
-          </p>
-           <p>
-            <%= link_to 'Query Seven', '/queryseven/',:class=>"badge badge-primary"%>
-          </p>
-           <p>
-            <%= link_to 'Query Eight', '/queryeight/',:class=>"badge badge-primary"%>
-          </p>
-           <p>
-            <%= link_to 'Query Nine', '/querynine/',:class=>"badge badge-primary"%>
-          </p>
-           <p>
-            <%= link_to 'Query Ten', '/queryten/',:class=>"badge badge-primary"%>
-          </p>
-
-
-          <p>
-            <%= link_to 'New Reservations', '/reservations/new',:class=>"badge badge-success"%>
-          </p>
-          <p>
-            <%= link_to 'New Vehicles', '/vehicles/new',:class=>"badge badge-success"%>
-          </p>
-
-          <p>
-            <%= link_to 'New Employees', '/employees/new',:class=>"badge badge-success"%>
-          </p>
-
-          <p>
-            <%= link_to 'New Branches', '/branches/new',:class=>"badge badge-success"%>
-          </p>
-          <p>
-            <%= link_to 'New Customers', '/customers/new',:class=>"badge badge-success"%>
-          </p>
-          <p>
-            <%= link_to 'New Colors', '/colors/new',:class=>"badge badge-success"%>
-          </p>
 
 
       </div>
     </nav>
+    <% if current_user %>
+
+
+  <% else %>
+
+      <%= back_Home %>
+  <% end %>
+
 
 
   </head>
