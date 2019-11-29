@@ -34,7 +34,7 @@ WHERE customers.id =    (SELECT reservations.customer_id
                                         INTERSECT
                                         SELECT reservations.customer_id
                                         FROM reservations, vehicles
-                                        WHERE vehicles.id=reservations.vehicle_id AND vehicles.v_type='minivan')"%>
+                                        WHERE vehicles.id=reservations.vehicle_id AND vehicles.v_type='minivan' limit 1)"%>
 <% @result = ActiveRecord::Base.connection.execute(@queryfive)%>
 
 <!--Display the query output-->
