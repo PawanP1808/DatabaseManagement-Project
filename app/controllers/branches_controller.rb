@@ -2,7 +2,7 @@ class BranchesController <ApplicationController
   def new
     @branch = Branch.new
   end
-
+# inserts into branch table
   def create
 
     # render plain: params[:customer].inspect
@@ -15,7 +15,7 @@ class BranchesController <ApplicationController
       render 'new'
     end
   end
-
+# displays branchs from table data
   def show
 
     @branch = Branch.first.nil?

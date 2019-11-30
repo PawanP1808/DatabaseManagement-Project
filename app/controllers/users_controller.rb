@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
-      
+
     @user = User.new
   end
 
@@ -25,6 +25,7 @@ class UsersController < ApplicationController
 
   # POST /users
   # POST /users.json
+  # add users to users table 
   def create
     @user = User.new(user_params)
     respond_to do |format|

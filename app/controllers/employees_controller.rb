@@ -3,7 +3,7 @@ class EmployeesController <ApplicationController
     @employee = Employee.new
 
   end
-
+# insert into employees
   def create
 
     # render plain: params[:customer].inspect
@@ -18,7 +18,7 @@ class EmployeesController <ApplicationController
       render 'new'
     end
   end
-
+# show employees
   def show
     @employee = Employee.first.nil?
     if @employee

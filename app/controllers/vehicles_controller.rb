@@ -2,7 +2,7 @@ class VehiclesController <ApplicationController
   def new
     @vehicle = Vehicle.new
   end
-
+# insert into vehicles table from view
   def create
 
     # render plain: params[:customer].inspect
@@ -15,7 +15,7 @@ class VehiclesController <ApplicationController
       render 'new'
     end
   end
-
+# shwo all vehicles in table
   def show
 @vehicle = Vehicle.first.nil?
     if @vehicle

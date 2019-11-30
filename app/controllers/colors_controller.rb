@@ -2,7 +2,7 @@ class ColorsController <ApplicationController
   def new
     @color = Color.new
   end
-
+# inserts into colors table
   def create
 
     # render plain: params[:customer].inspect
@@ -15,7 +15,7 @@ class ColorsController <ApplicationController
       render 'new'
     end
   end
-
+# displays color table is there is data
   def show
     @color = Color.first.nil?
     if @color

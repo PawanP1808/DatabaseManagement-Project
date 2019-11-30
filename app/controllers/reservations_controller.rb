@@ -2,7 +2,7 @@ class ReservationsController <ApplicationController
   def new
     @reservation = Reservation.new
   end
-
+# insert into reservations
   def create
 
     # render plain: params[:customer].inspect
@@ -15,7 +15,7 @@ class ReservationsController <ApplicationController
       render 'new'
     end
   end
-
+# show reservations if not empty
   def show
 @reservation = Reservation.first.nil?
     if @reservation

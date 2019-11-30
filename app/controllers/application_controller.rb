@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   helper_method :back_Home
   helper_method :home_dir
 
-
+# checks seesion of user during login
   def current_user
     if session[:user_id]
       @current_user ||= User.find(session[:user_id])

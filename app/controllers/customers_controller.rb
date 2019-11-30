@@ -3,7 +3,7 @@ class CustomersController <ApplicationController
     @customer = Customer.new
 
   end
-
+# check valid email using api and insert into customer
   def create
   response = Excon.get("http://apilayer.net/api/check?access_key=9e691b413c2d409bc6df3f247a3946ba&email="+params[:customer][:email]+"&smtp=1&format=1")
        return nil if response.status != 200
@@ -26,7 +26,7 @@ class CustomersController <ApplicationController
         redirect_to "/customers/new"
     end
   end
-
+# display all customers
   def show
 
     @customer = Customer.first.nil?
