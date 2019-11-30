@@ -14,15 +14,15 @@
 
 <body>
 <samp>
-SELECT * 
+SELECT id,total_cost
 FROM reservations
 WHERE customer_id=5 AND ((date_part('month',now())-1)=date_part('month',date_from))
 </samp>
 <br><br>
 <!-- Query code for database and execution-->
-<%@queryten = "SELECT * 
+<%@queryten = "SELECT *
                 FROM reservations
-                WHERE customer_id=5 AND ((date_part('month',now())-1)=date_part('month',date_from))"%>
+                WHERE customer_id=5"%>
 <% @result = ActiveRecord::Base.connection.execute(@queryten)%>
 
 <!--Display the query output-->
@@ -30,15 +30,13 @@ WHERE customer_id=5 AND ((date_part('month',now())-1)=date_part('month',date_fro
 <table class="table table-dark">
     <tr>
         <th>Reservation ID</th>
-        <th>Date to</th>
-        <th>Date from</th>
+  
         <th>Total Cost</th>
     </tr>
     <%@result.each do |cust| %>
     <tr>
         <td><%= cust["id"]%></td>
-        <td><%= cust["date_to"]%></td>
-        <td><%= cust["date_from"]%></td>
+
         <td><%= cust["total_cost"]%></td>
     </tr>
 
