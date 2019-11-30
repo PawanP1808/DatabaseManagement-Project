@@ -45,6 +45,18 @@ After installing all the files do the following:
 * Ruby migrations
 
         rake db:migrate
+* Populate the administrative Employee & User
+
+        Open PGAdmin 4 (Comes preinstalled with PostgreSQL)
+        Login 
+        Open carReservation_development table
+        Open Tables dropdown
+        View/Edit Data > All Rows... Allows you to add data into tables
+        Add a record in the following tables in order:
+                - Branch
+                - Employee
+                - User
+
 * Run the server 
 
         rails server
@@ -53,6 +65,7 @@ After installing all the files do the following:
 ### Database Usage
 Application usage steps are as follows:
 
+* Login: login with the administrative user created from PGAdmin
 * View Tables Section: Click buttons to show existing database content from various tables
 * Add to Tables Section: Click buttons to open adding into database interface
 * Query DB Section: Click buttons to view the 10 queries

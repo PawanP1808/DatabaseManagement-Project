@@ -23,7 +23,7 @@ class CustomersController <ApplicationController
 
     else
         flash[:notice] = "Email invalid"
-        redirect_to "/"
+        redirect_to "/customers/new"
     end
   end
 
